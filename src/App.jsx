@@ -1,40 +1,10 @@
 import { useState } from 'react';
-import { BrowserRouter, Routes, Route, Navigate, Link } from 'react-router-dom';
-import Login from './feature/Login/LoginUI.jsx'; // Đường dẫn đến component Login
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Login from './feature/Login/LoginUI.jsx';
+import Register from './feature/Register/RegisterUI.jsx';
+import ForgotPassword from './feature/ForgetPassword/ForgetPassowdUI.jsx';
+import Home from './feature/Home/HomeUI.jsx';
 import './App.css';
-
-// Component Home cho trang chính (nội dung gốc của App.jsx)
-function Home() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank" rel="noopener noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <Link to="/login">Go to Login</Link> {/* Liên kết để quay lại trang đăng nhập */}
-    </>
-  );
-}
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -47,10 +17,11 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* Trang đăng nhập */}
-        <Route
-          path="/login"
-          element={<Login onLogin={handleLogin} />}
-        />
+        <Route path="/login" element={<Login onLogin={handleLogin} />} />
+        {/* Trang đăng ký */}
+        <Route path="/register" element={<Register />} />
+        {/* Trang quên mật khẩu */}
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         {/* Trang chính */}
         <Route
           path="/"
