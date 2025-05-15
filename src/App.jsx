@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './feature/Login/LoginUI.jsx';
 import Register from './feature/Register/RegisterUI.jsx';
-import ForgotPassword from './feature/ForgetPassword/ForgetPassowdUI.jsx';
+import ForgotPassword from './feature/ForgetPassword/ForgetPasswordUI.jsx';
 import Home from './feature/Home/HomeUI.jsx';
 import './App.css';
 
