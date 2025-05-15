@@ -4,6 +4,7 @@ import Login from './feature/Login/LoginUI.jsx';
 import Register from './feature/Register/RegisterUI.jsx';
 import ForgotPassword from './feature/ForgetPassword/ForgetPasswordUI.jsx';
 import Home from './feature/Home/HomeUI.jsx';
+import Account from './feature/Account/AccountUI.jsx';
 import './App.css';
 
 function App() {
@@ -26,6 +27,10 @@ function App() {
         <Route
           path="/"
           element={isLoggedIn ? <Home /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/account"
+          element={isLoggedIn ? <Account /> : <Navigate to="/login" />}
         />
         {/* Chuyển hướng mặc định */}
         <Route path="*" element={<Navigate to="/login" />} />
